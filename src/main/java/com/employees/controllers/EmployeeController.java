@@ -22,7 +22,7 @@ public class EmployeeController {
         this.employeeService = employeeService;
     }
 
-    @RequestMapping(value = "employee", method = RequestMethod.GET)
+    @RequestMapping(value = "/employee", method = RequestMethod.GET)
     public String getAllEmployee(Model model) {
         model.addAttribute("employee", new Employee());
         model.addAttribute("getAllEmployee", this.employeeService.getAllEmployee());
