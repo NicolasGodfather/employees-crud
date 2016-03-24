@@ -25,4 +25,5 @@ public interface EmployeeService {
      * @return Users которые соответсвуют запросу
      */
     List<Employee> findEmployeeByQuery(String query);
+
 }
