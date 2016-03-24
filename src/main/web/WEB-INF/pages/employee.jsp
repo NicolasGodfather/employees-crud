@@ -78,7 +78,7 @@
 
 <h1>Add a Employee</h1>
 
-<c:url var="addAction" value="/employees/add"/>
+<c:url var="addAction" value="/employee/add"/>
 
 <form:form action="${addAction}" commandName="employee">
     <table>

@@ -56,7 +56,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
     public List<Employee> getAllEmployee() {
         Session session = this.sessionFactory.getCurrentSession();
         List<Employee> employeeList = session.createQuery("from Employee").list();
-
         for (Employee employee: employeeList) {
             logger.info("Employee list: " + employee);
         }
