@@ -7,46 +7,15 @@
 <head>
     <title>Employees page</title>
 
-    <style type="text/css">
-        .tg {
-            border-collapse: collapse;
-            border-spacing: 0;
-            border-color: #ccc;
-        }
-        .tg td {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #fff;
-        }
-        .tg th {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: normal;
-            padding: 10px 5px;
-            border-style: solid;
-            border-width: 1px;
-            overflow: hidden;
-            word-break: normal;
-            border-color: #ccc;
-            color: #333;
-            background-color: #f0f0f0;
-        }
-        .tg .tg-4eph {
-            background-color: #f9f9f9
-        }
-    </style>
 </head>
 <body>
 <a href="../../index.jsp">Back to main menu</a>
 
 <br/>
+<div class="form-group">
+    <label for="searchControl">Employees search:</label>
+    <input id="searchControl" ng-model="searchText" class="form-control" placeholder="Type search text">
+</div>
 <br/>
 
 <h1>Employee List</h1>
@@ -63,14 +32,14 @@
             <th width="60">Delete</th>
         </tr>
         <c:forEach items="${getAllEmployee}" var="employee">
-            <tr>
+            <tr ng-repeat="employee in allEmployees | filter:searchText">
                 <td>${employee.id}</td>
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.position}</td>
                 <td>${employee.department}</td>
                 <td><a href="<c:url value='/edit/${employee.id}'/>">Edit</a></td>
-                <td><a href="<c:url value='/remove/${employee.id}'/>">Delete</a></td>
+                <td><a href="<c:url value='/delete/${employee.id}'/>">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
