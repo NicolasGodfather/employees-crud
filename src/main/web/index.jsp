@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head lang="en">
@@ -12,7 +13,7 @@
 <body>
 <h3>Niko presents: CRUD Web-solutions - "Employees"</h3>
 <br/>
-<a href="WEB-INF/pages/employee" target="_blank">Employees list</a>
+<a href="<c:url value="/employee"/>" target="_blank">Employees list</a>
 <br/>
 </body>
 </html>

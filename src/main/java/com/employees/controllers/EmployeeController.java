@@ -40,7 +40,7 @@ public class EmployeeController {
         return "redirect:/employee";
     }
 
-    @RequestMapping("/delete/{}id")
+    @RequestMapping("/delete/{id}")
     public String deleteEmployeeById(@PathVariable("id") int id) {
         this.employeeService.deleteEmployeeById(id);
         return "redirect:/employee";

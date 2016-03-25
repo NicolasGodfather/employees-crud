@@ -6,11 +6,9 @@
 <html>
 <head>
     <title>Employees page</title>
-
 </head>
 <body>
 <a href="../../index.jsp">Back to main menu</a>
-
 <br/>
 <div class="form-group">
     <label for="searchControl">Employees search:</label>
@@ -18,12 +16,12 @@
 </div>
 <br/>
 
-<h1>Employee List</h1>
+<h2>Employee List</h2>
 
 <c:if test="${!empty getAllEmployee}">
     <table class="tg">
         <tr>
-            <th width="80">Id</th>
+            <th width="60">Id</th>
             <th width="120">Name</th>
             <th width="120">Last Name</th>
             <th width="120">Position</th>
@@ -32,9 +30,9 @@
             <th width="60">Delete</th>
         </tr>
         <c:forEach items="${getAllEmployee}" var="employee">
-            <tr ng-repeat="employee in allEmployees | filter:searchText">
-                <td>${employee.id}</td>
-                <td>${employee.firstName}</td>
+            <tr ng-repeat="employee in getAllEmployee | filter:searchText">
+                <td>${{employee.id}}</td>
+                <td>${{employee.firstName}}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.position}</td>
                 <td>${employee.department}</td>
@@ -45,7 +43,7 @@
     </table>
 </c:if>
 
-<h1>Add a Employee</h1>
+<h3>Add a Employee</h3>
 
 <c:url var="addAction" value="/employee/add"/>
 
