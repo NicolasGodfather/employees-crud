@@ -14,18 +14,18 @@
 <body ng-app="">
 <a href="../../index.jsp">Back to main menu</a>
 <br/>
-<%--<div class="form-group">--%>
-    <%--<label for="searchControl">Employees search:</label>--%>
-    <%--<input id="searchControl" ng-model="searchText" class="form-control" placeholder="Type search text">--%>
-    <%--<button class="button" <c:url var="query" value='/query'/> action="${query}" commandName="query" >Search</button>--%>
-<%--</div>--%>
+<div class="form-group">
+    <label for="searchControl">Employees search:</label>
+    <input id="searchControl" class="form-control" placeholder="Type search text">
+    <button class="button" <%-- <c:url var="query" value='/query'/>--%> action="${query}" commandName="query" >Search</button>
+</div>
 <br/>
 
 <h3>Employee List</h3>
 
 <c:if test="${!empty getAllEmployee}">
-    <table class="tg">
-        <tr>
+    <table class="table">
+        <tr class="danger">
             <th width="60">Id</th>
             <th width="120">Name</th>
             <th width="120">Last Name</th>
@@ -35,7 +35,7 @@
             <th width="60">Delete</th>
         </tr>
         <c:forEach items="${getAllEmployee}" var="employee">
-            <tr>
+            <tr class="info">
                 <td>${employee.id}</td>
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
