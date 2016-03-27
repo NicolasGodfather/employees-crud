@@ -19,5 +19,5 @@ public interface EmployeeDao {
 
     List<Employee> getAllEmployee();
 
-//    List<Employee> findEmployeeByQuery(String query);
+    List<Employee> findEmployeeByQuery(String query);
 }

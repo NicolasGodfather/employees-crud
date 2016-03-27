@@ -1,8 +1,11 @@
 package com.employees.dao;
 
 import com.employees.model.Employee;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -61,16 +64,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
         }
         return employeeList;
     }
-//    //filter
-//    @Override
-//    @SuppressWarnings("unchecked")
-//    public List<Employee> findEmployeeByQuery( final String query) {
-//        Session session = this.sessionFactory.getCurrentSession();
-//        Criteria searchCriteria = session.createCriteria(Employee.class).createAlias("properties", "prop");
-//        searchCriteria.add( Restrictions.and(Restrictions.eq("prop.name", "someName1"),
-//                            Restrictions.eq("prop.value", "someValue1")));
-//        return searchCriteria.list();
-//    }
+    //filter
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<Employee> findEmployeeByQuery(final String query) {
+        Session session = this.sessionFactory.getCurrentSession();
+        Criteria searchCriteria = session.createCriteria(Employee.class).
+                add(Restrictions.like("query", "query%",  MatchMode.END));
+        return searchCriteria.list();
+    }
 //
 //    example
 //    public static List<Object> createQueryStringByRegex(Criteria cri,
