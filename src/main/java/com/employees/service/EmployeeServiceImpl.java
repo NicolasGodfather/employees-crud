@@ -46,9 +46,9 @@ public class EmployeeServiceImpl implements EmployeeService{
         return this.employeeDao.getAllEmployee();
     }
 
-    @Override
-    @Transactional
-    public List<Employee> findEmployeeByQuery(String query) {
-        return null;
-    }
+//    @Override
+//    @Transactional
+//    public List<Employee> findEmployeeByQuery(String query) {
+//        return this.employeeDao.findEmployeeByQuery(query);
+//    }
 }

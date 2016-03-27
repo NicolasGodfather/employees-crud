@@ -52,10 +52,13 @@ public class EmployeeController {
         model.addAttribute("getAllEmployee", this.employeeService.getAllEmployee());
         return "employee";
     }
+//    //filter
+//    @RequestMapping(value = "query")
+//    public String findEmployeeByQuery(Model model) {
+//        String query = String.valueOf(model);
+//        model.addAttribute("employee", new Employee());
+//        model.addAttribute("query", this.employeeService.findEmployeeByQuery(query));
 //
-//    @RequestMapping("employeeData/{id}")
-//    public String employeeData(@PathVariable("id") int id, Model model) {
-//        model.addAttribute("employee", this.employeeService.getEmployeeById(id));
-//        return "employeeData";
+//        return "redirect:/employee";
 //    }
 }

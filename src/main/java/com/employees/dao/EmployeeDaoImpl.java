@@ -61,9 +61,31 @@ public class EmployeeDaoImpl implements EmployeeDao{
         }
         return employeeList;
     }
-
-    @Override
-    public List<Employee> findEmployeeByQuery(String query) {
-        return null;
-    }
+//    //filter
+//    @Override
+//    @SuppressWarnings("unchecked")
+//    public List<Employee> findEmployeeByQuery( final String query) {
+//        Session session = this.sessionFactory.getCurrentSession();
+//        Criteria searchCriteria = session.createCriteria(Employee.class).createAlias("properties", "prop");
+//        searchCriteria.add( Restrictions.and(Restrictions.eq("prop.name", "someName1"),
+//                            Restrictions.eq("prop.value", "someValue1")));
+//        return searchCriteria.list();
+//    }
+//
+//    example
+//    public static List<Object> createQueryStringByRegex(Criteria cri,
+//                                                        Parameters p) {
+//        String value = (String) p.value;
+//        if (value.contains("*")) {
+//            value = value.replace("*", "%");
+//        } else {
+//            value += "%";
+//        }
+//        // System.out.println("Value: "+value);
+//        Criterion c1 = Restrictions.ilike(p.property, value);
+//        cri.add(c1);
+//
+//        return cri.list();
+//
+//    }
 }

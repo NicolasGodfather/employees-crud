@@ -6,17 +6,20 @@
 <html>
 <head>
     <title>Employees page</title>
+    <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css">--%>
+    <link href="../../css/employee.css" />
 </head>
-<body>
+<body ng-app="">
 <a href="../../index.jsp">Back to main menu</a>
 <br/>
-<div class="form-group">
-    <label for="searchControl">Employees search:</label>
-    <input id="searchControl" ng-model="searchText" class="form-control" placeholder="Type search text">
-</div>
+<%--<div class="form-group">--%>
+    <%--<label for="searchControl">Employees search:</label>--%>
+    <%--<input id="searchControl" ng-model="searchText" class="form-control" placeholder="Type search text">--%>
+    <%--<button class="button" <c:url var="query" value='/query'/> action="${query}" commandName="query" >Search</button>--%>
+<%--</div>--%>
 <br/>
 
-<h2>Employee List</h2>
+<h3>Employee List</h3>
 
 <c:if test="${!empty getAllEmployee}">
     <table class="tg">
@@ -30,9 +33,9 @@
             <th width="60">Delete</th>
         </tr>
         <c:forEach items="${getAllEmployee}" var="employee">
-            <tr ng-repeat="employee in getAllEmployee | filter:searchText">
-                <td>${{employee.id}}</td>
-                <td>${{employee.firstName}}</td>
+            <tr>
+                <td>${employee.id}</td>
+                <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.position}</td>
                 <td>${employee.department}</td>
@@ -46,7 +49,6 @@
 <h3>Add a Employee</h3>
 
 <c:url var="addAction" value="/employee/add"/>
-
 <form:form action="${addAction}" commandName="employee">
     <table>
         <c:if test="${!empty employee.firstName}">

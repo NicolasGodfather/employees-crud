@@ -19,10 +19,5 @@ public interface EmployeeDao {
 
     List<Employee> getAllEmployee();
 
-    /**
-     * Находит пользователя в поисковике
-     * @param query строка запроса
-     * @return Users которые соответсвуют запросу
-     */
-    List<Employee> findEmployeeByQuery(String query);
+//    List<Employee> findEmployeeByQuery(String query);
 }
