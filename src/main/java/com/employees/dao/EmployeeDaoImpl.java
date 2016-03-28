@@ -4,7 +4,6 @@ import com.employees.model.Employee;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -70,7 +69,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
     public List<Employee> findEmployeeByQuery(final String query) {
         Session session = this.sessionFactory.getCurrentSession();
         Criteria searchCriteria = session.createCriteria(Employee.class).
-                add(Restrictions.like("query", "query%",  MatchMode.END));
+                add(Restrictions.like("query", "query%"));
         return searchCriteria.list();
     }
 //

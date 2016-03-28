@@ -57,7 +57,7 @@ public class EmployeeController {
     @RequestMapping(value = "query")
     public String findEmployeeByQuery(Model model) {
         String query = String.valueOf(model);
-        model.addAttribute("employee", new Employee());
+//        model.addAttribute("employee", new Employee());
         model.addAttribute("query", this.employeeService.findEmployeeByQuery(query));
 
         return "redirect:/employee";

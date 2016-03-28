@@ -15,10 +15,21 @@
 <a href="../../index.jsp">Back to main menu</a>
 <br/>
 
+<%--<div class="form-group searchText" style="width: 600px; margin: auto">--%>
+<%--<label for="searchControl">Employees search:</label>--%>
+<%--<input id="searchControl" class="form-control" placeholder="Type search text">--%>
+<%--<c:url var="query" value='/query'/>--%>
+<%--<input type="submit" value="<spring:message text="Search"/>"/>--%>
+<%--<button  class="button"  action="${query}" commandName="query">Search</button>--%>
+<%--</div>--%>
+
 <div class="form-group searchText" style="width: 600px; margin: auto">
-    <label for="searchControl">Employees search:</label>
-    <input id="searchControl" class="form-control" placeholder="Type search text">
-    <button class="button" <c:url var="query" value='/query'/> action="${query}" commandName="query">Search</button>
+    <h4>Employees search:</h4>
+    <c:url var="queryAction" value='/query'/>
+    <form:form action="${queryAction}" commandName="query">
+        <input id="searchControl" class="form-control" placeholder="Type search text">
+        <input type="submit" value="<spring:message text="Search"/>"/>
+    </form:form>
 </div>
 
 <div class="form-group searchText" style="margin-left: 20px">
