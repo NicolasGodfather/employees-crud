@@ -19,7 +19,7 @@
     <h4>Employees search:</h4>
     <c:url var="queryAction" value='/query'/>
     <form:form action="${queryAction}" commandName="query">
-        <input id="searchControl" class="form-control" placeholder="Type search text">
+        <input name="searchControl" class="form-control" placeholder="Type search text">
         <input type="submit" value="<spring:message text="Search"/>"/>
     </form:form>
 </div>

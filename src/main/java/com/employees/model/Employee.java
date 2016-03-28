@@ -3,8 +3,6 @@ package com.employees.model;
 import javax.persistence.*;
 
 @Entity
-//@FilterDef(name="firstName", parameters=@ParamDef(name="firstName", type="string"))
-//@Filter(name="firstName", condition="firstName=:firstName")
 @Table(name = "employeeslist")
 public class Employee {
     @Id

@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmployeeController {
@@ -55,11 +52,9 @@ public class EmployeeController {
 
     //filter
     @RequestMapping(value = "query")
-    public String findEmployeeByQuery(Model model) {
-        String query = String.valueOf(model);
+    public String findEmployeeByQuery(@RequestParam("searchControl") String query, Model model) {
         model.addAttribute("employee", new Employee());
-        model.addAttribute("query", this.employeeService.findEmployeeByQuery(query));
-
-        return "redirect:/employee";
+        model.addAttribute("getAllEmployee", this.employeeService.findEmployeeByQuery(query));
+        return "employee";
     }
 }
